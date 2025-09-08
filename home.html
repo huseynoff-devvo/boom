@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bütün Postlar + Bəyən Dəstəyi (Canlı)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://huseynoff-devvo.github.io/boom/css/home.css">
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p style="color:white; margin-top: 15px;"></p>
+    </div>
+
+    <div id="story-viewer">
+        <div id="story-media-container"></div>
+        <span class="material-icons close-story-button" onclick="closeStoryViewer();">close</span>
+        <span class="material-icons pause-story-button" onclick="togglePauseStory();">pause_circle_filled</span>
+        <div class="story-progress-bar"></div>
+        <div class="story-controls">
+            <div class="story-header">
+                <img class="story-profile-pic" src="" alt="Profil Şəkli">
+                <span class="username"></span>
+                <span class="time"></span>
+                <span class="material-icons delete-btn" style="display: none;">delete</span>
+            </div>
+            <div style="flex-grow: 1;"></div>
+            <div class="story-footer">
+                <div class="story-stats" style="display: none;">
+                    <div class="story-stats-item" onclick="toggleStoryViewsList()">
+                        <span class="material-icons">visibility</span>
+                        <span class="count view-count">0</span>
+                    </div>
+                    <div class="story-stats-item" onclick="toggleStoryLikesList()">
+                        <span class="material-icons">favorite</span>
+                        <span class="count like-count">0</span>
+                    </div>
+                </div>
+                <div class="story-likes-list-container" id="story-likes-list-container">
+                    <h4>Bəyənənlər</h4>
+                </div>
+                <div class="story-views-list-container" id="story-views-list-container">
+                     <h4>Baxışlar</h4>
+                </div>
+                <div class="story-footer-bottom">
+                    <span class="story-text"></span>
+                    <div class="story-actions">
+                         <button class="story-like-button material-icons" onclick="toggleStoryLike(event);">favorite_border</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="story-loading-indicator" class="spinner"></div>
+    </div>
+    <div id="stories-container"></div>
+
+    <!-- Post Naviqasiya Zolağı -->
+    <div id="post-navigation-bar">
+        <button id="my-posts-button">Postlarım</button>
+        <button id="all-posts-button" class="active">Postlar</button>
+        <button id="saved-posts-button">Qeydlərim</button> <!-- Yeni: Qeydlərim düyməsi -->
+    </div>
+
+    <div id="posts"></div>
+
+    <!-- Yeni: Qeyd Yoxdur Mesajı -->
+    <div id="no-saved-posts-message">
+        <span class="material-icons">bookmark_border</span>
+        <p>Hələ heç bir post qeyd etməmisiniz.</p>
+    </div>
+
+    <!-- Təsdiq dialoqu -->
+    <div class="confirm-dialog" id="confirmDialog">
+        <div>Bu postu silmək istəyirsiniz?</div>
+        <div style="margin-top: 10px;">
+            <button class="yes" id="confirmYes">Bəli</button>
+            <button class="no" id="confirmNo">Xəyr</button>
+        </div>
+    </div>
+
+    <!-- Alert Dialoqu -->
+    <div class="alert-dialog" id="alertDialog">
+        <div id="alertMessage"></div>
+        <button id="alertOk">Ok</button>
+    </div>
+
+    <!-- Şərh Overlay -->
+    <div id="comment-overlay">
+        <div class="comment-header">
+            <span class="material-icons" onclick="closeCommentOverlay();">close</span>
+            <h2>Şərhlər</h2>
+        </div>
+        <div id="comments-list">
+            <!-- Şərhlər buraya yüklənəcək -->
+        </div>
+        <!-- Yeni Comment Sil Təsdiq Dialoqu (Moved inside comment-overlay) -->
+        <div class="confirm-dialog" id="confirmDeleteCommentDialog">
+            <div>Bu şərhi silmək istəyirsiniz?</div>
+            <div style="margin-top: 10px;">
+                <button class="yes" id="confirmDeleteCommentYes">Bəli</button>
+                <button class="no" id="confirmDeleteCommentNo">Xəyr</button>
+            </div>
+        </div>
+        <div id="gif-list-container">
+            <div id="gif-list-header">
+                <h3>GIF seçin</h3>
+                <span class="material-icons close-gif-list" onclick="toggleGifList()">close</span>
+            </div>
+            <div id="gif-carousel">
+                <!-- GIF-lər buraya yüklənəcək -->
+            </div>
+        </div>
+        <div class="comment-input-area">
+            <button id="gif-button" class="material-icons gif-button">gif</button>
+            <input type="text" id="comment-input" placeholder="Şərh yazın..." />
+            <button id="send-comment-button" class="material-icons" disabled>send</button>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+    <script src="https://huseynoff-devvo.github.io/boom/js/home.js"></script>
+</body>
+</html>
