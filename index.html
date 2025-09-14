@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxymbsg0p/image/upload/v1757092810/vecteezy_cute-lemon-cartoon_47434226_jgnaor.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limon.az | Hesab Siyasəti</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Loading ekranı */
+    #loading {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 0.5s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .lemon {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      background: #f6d743;
+      border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+      box-shadow: 0 0 25px rgba(246, 215, 67, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .eye {
+      position: absolute;
+      width: 12px; height: 12px;
+      background: #0d1117;
+      border-radius: 50%;
+      top: 40px;
+    }
+    .eye.left { left: 35px; }
+    .eye.right { right: 35px; }
+
+    .mouth {
+      position: absolute;
+      bottom: 35px;
+      width: 40px;
+      height: 20px;
+      border-bottom: 4px solid #0d1117;
+      border-radius: 0 0 50% 50%;
+    }
+
+    .hand {
+      position: absolute;
+      right: -25px;
+      top: 50px;
+      width: 25px; height: 25px;
+      background: #f6d743;
+      border-radius: 50%;
+      transform-origin: left center;
+      animation: wave 1s infinite;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-15px); }
+    }
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(30deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Əsas məzmun */
+    #content {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: -50px;
+      opacity: 0;
+      animation: appear 0.8s ease forwards;
+      animation-delay: 1s;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 2.3rem;
+      color: #00ff84;
+    }
+    header p {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+
+    h2 {
+      color: #00ff84;
+      margin-top: 25px;
+      font-size: 1.3rem;
+    }
+    p {
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      margin: 10px 0 20px 25px;
+      list-style: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    @keyframes appear {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading ekranı -->
+  <div id="loading">
+    <div class="lemon">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="mouth"></div>
+      <div class="hand"></div>
+    </div>
+  </div>
+
+  <!-- Əsas kontent -->
+  <div id="content">
+    <header>
+      <h1>Hesab Siyasəti</h1>
+      <p>limon.az – Hesab məlumatlarınızın təhlükəsizliyi və qorunması</p>
+    </header>
+
+    <section>
+      <h2>1. Qeydiyyat və Giriş</h2>
+      <p>Limon.az platformasında qeydiyyat zamanı istifadəçidən yalnız <b>istifadəçi adı</b> və <b>şifrə</b> tələb olunur. Giriş prosesi də eyni məlumatlarla həyata keçirilir. Bu məlumatların düzgün və təhlükəsiz daxil edilməsi istifadəçinin məsuliyyətidir.</p>
+
+      <h2>2. İstifadəçi ID-si</h2>
+      <p>Qeydiyyat tamamlandıqdan sonra hər bir istifadəçiyə unikal <b>istifadəçi ID-si</b> verilir. Bu ID istifadəçinin sistemdə tanınması üçün istifadə olunur və <b>heç bir halda digər şəxslərlə paylaşılmamalıdır</b>.</p>
+
+      <h2>3. Şifrənin Qorunması</h2>
+      <p>Şifrələr istifadəçinin şəxsi məlumatlarını qorumaq üçün əsas vasitədir. İstifadəçilərdən güclü şifrə seçmələri və onu heç kimlə paylaşmamaları tələb olunur. Şifrələrin itirilməsi və ya oğurlanması hallarında yaranan məsuliyyət istifadəçiyə məxsusdur.</p>
+
+      <h2>4. Məlumatların Saxlanması</h2>
+      <p>İstifadəçi adı, şifrə və ID məlumatları <b>şifrələnmiş formada</b> serverlərimizdə saxlanılır. Bu məlumatlar yalnız girişin yoxlanması üçün istifadə olunur və üçüncü tərəflərlə paylaşılmır.</p>
+
+      <h2>5. Hesabın Təhlükəsizliyi</h2>
+      <p>İstifadəçilər öz hesablarına giriş üçün istifadə etdikləri cihazların təhlükəsizliyinə diqqət etməli və ictimai cihazlardan istifadə zamanı hesabdan çıxmağı unutmamalıdırlar.</p>
+
+      <h2>6. Hesabın Silinməsi</h2>
+      <p>İstifadəçi istədiyi zaman hesabının tam silinməsini tələb edə bilər. Bu halda bütün şəxsi məlumatları və paylaşımları sistemdən geri dönməz şəkildə silinir. Bu proses üçün istifadəçi bizə e-poçt vasitəsilə müraciət etməlidir.</p>
+
+      <h2>7. Məsuliyyət</h2>
+      <p>Hesab məlumatlarının (istifadəçi adı, şifrə və ID) təhlükəsizliyinə istifadəçi cavabdehdir. Bu məlumatların üçüncü şəxslərə verilməsi və ya sızması nəticəsində yaranan hər hansı məsuliyyət və ya zərərə görə Limon.az komandası cavabdehlik daşımır.</p>
+
+      <h2>8. Əlaqə</h2>
+      <p>Sual və ya şikayətlər üçün bizimlə <b>support@limon.az</b> və ya <b>limon.az.team@gmail.com</b> ünvanı vasitəsilə əlaqə saxlayın.</p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Limon.az – Azərbaycanın sosial media platforması
+  </footer>
+</body>
+</html>
