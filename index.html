@@ -1,201 +1,335 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxymbsg0p/image/upload/v1757092810/vecteezy_cute-lemon-cartoon_47434226_jgnaor.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Limon.az | Hesab Siyasəti</title>
-  <style>
-    * {
-  user-select: none;   /* Seçməni bloklayır */
-  -webkit-user-select: none; /* Safari üçün */
-  -ms-user-select: none;     /* Köhnə IE üçün */
-}
-img {
-  pointer-events: none;  /* şəkil kliklənməsin */
-  user-drag: none;       /* brauzerdə sürüklənməsin */
-  -webkit-user-drag: none; /* Safari/Chrome üçün */
-}
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background: #101010;
-      color: #e6edf3;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503923/Melonix_2_1_ecfmpp.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>・huseynoff.one</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* CSS Başlanğıcı */
 
-    /* Loading ekranı */
-    #loading {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #101010;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: fadeOut 0.5s ease forwards;
-      animation-delay: 1s;
-    }
+        * {
+            user-select: none;    /* Seçməni bloklayır */
+            -webkit-user-select: none; /* Safari üçün */
+            -ms-user-select: none;      /* Köhnə IE üçün */
+        }
+        img {
+            pointer-events: none;  /* şəkil kliklənməsin */
+            user-drag: none;       /* brauzerdə sürüklənməsin */
+            -webkit-user-drag: none; /* Safari/Chrome üçün */
+        }
 
-    .lemon {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      background: #f6d743;
-      border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
-      box-shadow: 0 0 25px rgba(246, 215, 67, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: bounce 1s infinite alternate;
-    }
+        :root {
+            --main-bg-color: #000000;
+            --card-bg-dark: #303030;
+            --text-color: #f0f0f0;
+            --accent-color: #ff0000;
+            --dark-grey-text: #888; 
+            --pp-size: 107px; 
+            --skull-img-width: 170px;
+            --header-padding: 20px;
+            --max-width: 450px;
+        }
 
-    .eye {
-      position: absolute;
-      width: 12px; height: 12px;
-      background: #101010;
-      border-radius: 50%;
-      top: 40px;
-    }
-    .eye.left { left: 35px; }
-    .eye.right { right: 35px; }
+        /* Ümumi sıfırlama */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .mouth {
-      position: absolute;
-      bottom: 35px;
-      width: 40px;
-      height: 20px;
-      border-bottom: 4px solid #101010;
-      border-radius: 0 0 50% 50%;
-    }
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-    .hand {
-      position: absolute;
-      right: -25px;
-      top: 50px;
-      width: 25px; height: 25px;
-      background: #f6d743;
-      border-radius: 50%;
-      transform-origin: left center;
-      animation: wave 1s infinite;
-    }
+        /* Əsas Kontent Konteyneri */
+        .bio-container {
+            width: 100%;
+            max-width: var(--max-width); 
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+        
+        /* HEADER HİSSƏSİ - PP, Kəllə və Ad/Handle */
+        .header-section {
+            position: relative;
+            padding: var(--header-padding);
+            min-height: calc(var(--pp-size) + 70px); 
+            padding-bottom: 0;
+        }
 
-    @keyframes bounce {
-      from { transform: translateY(0); }
-      to { transform: translateY(-15px); }
-    }
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(30deg); }
-      100% { transform: rotate(0deg); }
-    }
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
+        /* Profil şəkli (Sol Künc) */
+        .profile-pic-border {
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            width: var(--pp-size);
+            height: var(--pp-size);
+            border-radius: 50%;
+            border: 3px solid var(--accent-color); 
+            padding: 3px;
+            background-color: var(--main-bg-color); 
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+            z-index: 10;
+            overflow: hidden;
+        }
 
-    /* Əsas məzmun */
-    #content {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 12px;
-      margin-top: -50px;
-      opacity: 0;
-      animation: appear 0.8s ease forwards;
-      animation-delay: 1s;
-    }
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 1.3rem;
-      color: #00ff84;
-    }
-    header p {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 8px;
-    }
+        /* Kəllə şəkli (Sağ Künc) */
+        .skull-image {
+            position: absolute;
+            top: 0; 
+            right: 0; 
+            width: var(--skull-img-width); 
+            height: auto;
+            max-height: 170px;
+            object-fit: contain; 
+            object-position: right top; 
+            z-index: 10; 
+            opacity: 1; 
+            pointer-events: none;
+        }
+        
+        /* Ad və Handle */
+        .profile-info {
+            position: absolute;
+            top: calc(var(--pp-size) + var(--header-padding) - 10px); 
+            left: var(--header-padding);
+            z-index: 15;
+            text-align: left;
+            margin-top: 10px; 
+        }
 
-    h2 {
-      color: #00ff84;
-      margin-top: 25px;
-      font-size: 1.1rem;
-    }
-    p {
-      margin-bottom: 12px;
-      font-size: 0.98rem;
-    }
+        .username {
+            margin-top: 9px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2em;
+            line-height: 0.9;
+            color: var(--text-color);
+            letter-spacing: 1.5px;
+            white-space: nowrap; 
+        }
 
-    ul {
-      margin: 10px 0 20px 25px;
-      list-style: square;
-    }
+        .handle {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-grey-text);
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
+        /* LİNKLƏR/KARTLAR KONTEYNERİ */
+        .links-container {
+            flex-grow: 1; 
+            padding: 10px var(--header-padding); 
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 15px; 
+            align-content: flex-start; 
+            /* padding-bottom: 30px; */
+        }
 
-    @keyframes appear {
-      to { opacity: 1; }
-    }
-  </style>
+        /* Link Kartları */
+        .link-card {
+            background-color: transparent; 
+            color: var(--text-color); 
+            text-decoration: none;
+            border-radius: 15px; 
+            font-weight: 700;
+            font-size: 1.0em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 10px;
+        }
+        
+        /* İkon Linkləri - Yan-Yana Düzülüş, Şəffaf Fon */
+        .link-card.icon-only {
+            width: calc(11% - 10px); 
+            height: 50px; 
+            text-align: center;
+            font-size: 1.8em; 
+            padding: 0; 
+        }
+        
+        /* Hover effekti */
+        .link-card.icon-only:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.05);
+            color: var(--accent-color);
+        }
+        
+        /* === ÜÇLÜ KART DÜZƏNİ ÜÇÜN STİL === */
+
+        .image-card-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+            min-height: 350px; 
+        }
+
+        .grid-card {
+            background-color: #080808; /* Tünd boz fon */
+            border-radius: 15px;
+            /* Mətn mərkəzləmə stillərini sildik, çünki indi şəkil var */
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 0; /* padding 0 olmalıdır ki, şəkil kənarları tam tutsun */
+            overflow: hidden; /* Şəkil kartdan kənara çıxmasın */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s;
+            position: relative; /* Overlay üçün */
+        }
+
+        /* Grid kartlarının içərisindəki şəkillər üçün stil */
+        .grid-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Şəklin kartı doldurmasını təmin edir */
+            border-radius: 12px; /* Kartın radiusundan bir qədər az */
+            display: block; /* Sətir altı boşluqları silmək üçün */
+        }
+
+        /* Şəkillərin üzərindəki mətn overlay-i */
+        .grid-card .overlay-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            z-index: 20; /* Şəklin üstündə olmalı */
+            text-align: left;
+            padding: 5px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5); /* Arxa fonu bir az tündləşdirir */
+        }
+        
+        /* Sol tərəfdəki böyük kart: 2 sətir boyu uzanır */
+        .grid-card.large {
+            grid-row: span 2; 
+        }
+        
+        /* FOOTER HİSSƏSİ (Səhifənin ən sonunda, sürüşdürülə bilən) */
+        .footer-section {
+            width: 100%;
+            max-width: var(--max-width);
+            text-align: center;
+            margin-top: auto; 
+            padding: 10px var(--header-padding) 20px;
+            z-index: 50;
+        }
+
+        .custom-bio-text {
+            font-size: 0.75em; 
+            color: var(--dark-grey-text);
+            margin-bottom: -16px; 
+        }
+
+        /* İmza şəkli tam "bio" sözünün üzərinə düşür */
+        .bio-text-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .bio-text-wrapper .signature-image {
+            position: absolute;
+            bottom: 445px; 
+            left: -454%;
+            transform: translateX(-50%);
+            width: 70px; 
+            opacity: 1;
+            z-index: 60;
+        }
+
+        /* CSS Sonu */
+    </style>
 </head>
 <body>
-  <!-- Loading ekranı -->
-  <div id="loading">
-    <div class="lemon">
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="mouth"></div>
-      <div class="hand"></div>
+    <div class="bio-container">
+        
+        <div class="header-section">
+            
+            <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503837/wallhaven-9odwod_1_1_wwyrao.png"class="skull-image">
+
+            <div class="profile-pic-border">
+                <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503674/discord-pp_vmfisw.gif" class="profile-pic">
+            </div>
+
+            <div class="profile-info">
+                <h1 class="username">HIKMET HUSEYNOFF</h1>
+                <p class="handle">・huseynoff.one</p>
+            </div>
+        </div>
+        
+        <div class="links-container">
+            
+            <a href="https://www.instagram.com/huseynoff.one/" target="_blank" class="link-card icon-only">
+                <i class="fab fa-instagram" style="color: #E1306C;"></i>
+            </a>
+
+            <a href="https://github.com/huseynoff-one" target="_blank" class="link-card icon-only">
+                <i class="fab fa-github" style="color: #FFFFFF;"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@heshzadgelmiraglima" target="_blank" class="link-card icon-only">
+                <i class="fab fa-youtube" style="color: #FF0000;"></i>
+            </a>
+
+            <a href="mailto:scp@foundation.com" class="link-card icon-only">
+                <i class="fas fa-envelope" style="color: #0078D4;"></i>
+            </a>
+
+            <div class="image-card-grid">
+                
+                <a class="grid-card large">
+                    <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761507082/0182ce49934ba955f88d65125de91be1_hfleql.png"/>
+                    <!-- <span class="overlay-text">Böyük Şəkil Kartı</span> -->
+                </a>
+
+                <a class="grid-card small">
+                    <img src="https://media.tenor.com/FQDhE-MiEEYAAAAM/dyster-profile-picture.gif"/>
+                    <!-- <span class="overlay-text">Kiçik Kart 1</span> -->
+                </a>
+
+                <a class="grid-card small">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/2febcd75685725.5c5339f507987.gif"/>
+                    <!-- <span class="overlay-text">Kiçik Kart 2</span> -->
+                </a>
+
+            </div>
+            
+        </div>
+        
+        <div class="footer-section">
+            <p class="custom-bio-text">
+                Are you using linktree? Hahaha this is custom 
+                <span class="bio-text-wrapper">
+                    bio
+                    <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503923/Melonix_2_1_ecfmpp.png" alt="Signature" class="signature-image">
+                </span>
+            </p>
+        </div>
     </div>
-  </div>
-
-  <!-- Əsas kontent -->
-  <div id="content">
-    <header>
-      <h1>Hesab Siyasəti</h1>
-      <p>limon.az – Hesab məlumatlarınızın təhlükəsizliyi və qorunması</p>
-    </header>
-
-    <section>
-      <h2>1. Qeydiyyat və Giriş</h2>
-      <p>Limon.az platformasında qeydiyyat zamanı istifadəçidən yalnız <b>istifadəçi adı</b> və <b>şifrə</b> tələb olunur. Giriş prosesi də eyni məlumatlarla həyata keçirilir. Bu məlumatların düzgün və təhlükəsiz daxil edilməsi istifadəçinin məsuliyyətidir.</p>
-
-      <h2>2. İstifadəçi ID-si</h2>
-      <p>Qeydiyyat tamamlandıqdan sonra hər bir istifadəçiyə unikal <b>istifadəçi ID-si</b> verilir. Bu ID istifadəçinin sistemdə tanınması üçün istifadə olunur və <b>heç bir halda digər şəxslərlə paylaşılmamalıdır</b>.</p>
-
-      <h2>3. Şifrənin Qorunması</h2>
-      <p>Şifrələr istifadəçinin şəxsi məlumatlarını qorumaq üçün əsas vasitədir. İstifadəçilərdən güclü şifrə seçmələri və onu heç kimlə paylaşmamaları tələb olunur. Şifrələrin itirilməsi və ya oğurlanması hallarında yaranan məsuliyyət istifadəçiyə məxsusdur.</p>
-
-      <h2>4. Məlumatların Saxlanması</h2>
-      <p>İstifadəçi adı, şifrə və ID məlumatları <b>şifrələnmiş formada</b> serverlərimizdə saxlanılır. Bu məlumatlar yalnız girişin yoxlanması üçün istifadə olunur və üçüncü tərəflərlə paylaşılmır.</p>
-
-      <h2>5. Hesabın Təhlükəsizliyi</h2>
-      <p>İstifadəçilər öz hesablarına giriş üçün istifadə etdikləri cihazların təhlükəsizliyinə diqqət etməli və ictimai cihazlardan istifadə zamanı hesabdan çıxmağı unutmamalıdırlar.</p>
-
-      <h2>6. Hesabın Silinməsi</h2>
-      <p>İstifadəçi istədiyi zaman hesabının tam silinməsini tələb edə bilər. Bu halda bütün şəxsi məlumatları və paylaşımları sistemdən geri dönməz şəkildə silinir. Bu proses üçün istifadəçi bizə e-poçt vasitəsilə müraciət etməlidir.</p>
-
-      <h2>7. Məsuliyyət</h2>
-      <p>Hesab məlumatlarının (istifadəçi adı, şifrə və ID) təhlükəsizliyinə istifadəçi cavabdehdir. Bu məlumatların üçüncü şəxslərə verilməsi və ya sızması nəticəsində yaranan hər hansı məsuliyyət və ya zərərə görə Limon.az komandası cavabdehlik daşımır.</p>
-
-      <h2>8. Əlaqə</h2>
-      <p>Sual və ya şikayətlər üçün bizimlə <b>support@limon.az</b> və ya <b>limon.az.team@gmail.com</b> ünvanı vasitəsilə əlaqə saxlayın.</p>
-    </section>
-  </div>
-
-  <footer>
-    © 2025 Limon.az – Azərbaycanın sosial media platforması
-  </footer>
 </body>
 </html>
