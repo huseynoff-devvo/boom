@@ -7,15 +7,28 @@
     <title>・huseynoff.one</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+
     <style>
+        button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
         /* CSS Başlanğıcı */
 
         * {
             user-select: none;    /* Seçməni bloklayır */
             -webkit-user-select: none; /* Safari üçün */
             -ms-user-select: none;      /* Köhnə IE üçün */
+            /* Mavi vurğulama effekti (focus ring) qaldırıldı */
+            outline: none; 
         }
+        
+        /* Bütün interaktiv elementlərdə mavi vurğulama effektini qaldırır */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: none; 
+        }
+
         img {
             pointer-events: none;  /* şəkil kliklənməsin */
             user-drag: none;       /* brauzerdə sürüklənməsin */
@@ -59,7 +72,7 @@
             flex-direction: column;
             min-height: 100vh; 
         }
-        
+
         /* HEADER HİSSƏSİ - PP, Kəllə və Ad/Handle */
         .header-section {
             position: relative;
@@ -106,7 +119,7 @@
             opacity: 1; 
             pointer-events: none;
         }
-        
+
         /* Ad və Handle */
         .profile-info {
             position: absolute;
@@ -159,7 +172,7 @@
             align-items: center;
             padding: 15px 10px;
         }
-        
+
         /* İkon Linkləri - Yan-Yana Düzülüş, Şəffaf Fon */
         .link-card.icon-only {
             width: calc(11% - 10px); 
@@ -168,12 +181,22 @@
             font-size: 1.8em; 
             padding: 0; 
         }
-        
+
         /* Hover effekti */
         .link-card.icon-only:hover {
             border-color: var(--accent-color);
             transform: scale(1.05);
             color: var(--accent-color);
+        }
+
+        /* Wallhaven İkonu üçün Xüsusi Stil (Şəkil əsasında) */
+        .wallhaven-icon-img {
+            width: 100%; 
+            height: 100%;
+            object-fit: contain; 
+            /* 10px-lik radius qoyuldu */
+            /* border: 1px solid black; */
+            border-radius: 15px; 
         }
         
         /* === ÜÇLÜ KART DÜZƏNİ ÜÇÜN STİL === */
@@ -224,12 +247,12 @@
             border-radius: 5px;
             background: rgba(0, 0, 0, 0.5); /* Arxa fonu bir az tündləşdirir */
         }
-        
+
         /* Sol tərəfdəki böyük kart: 2 sətir boyu uzanır */
         .grid-card.large {
             grid-row: span 2; 
         }
-        
+
         /* FOOTER HİSSƏSİ (Səhifənin ən sonunda, sürüşdürülə bilən) */
         .footer-section {
             width: 100%;
@@ -267,9 +290,9 @@
 </head>
 <body>
     <div class="bio-container">
-        
+
         <div class="header-section">
-            
+
             <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503837/wallhaven-9odwod_1_1_wwyrao.png"class="skull-image">
 
             <div class="profile-pic-border">
@@ -281,15 +304,19 @@
                 <p class="handle">・huseynoff.one</p>
             </div>
         </div>
-        
+
         <div class="links-container">
-            
+
             <a href="https://www.instagram.com/huseynoff.one/" target="_blank" class="link-card icon-only">
                 <i class="fab fa-instagram" style="color: #E1306C;"></i>
             </a>
 
             <a href="https://github.com/huseynoff-one" target="_blank" class="link-card icon-only">
                 <i class="fab fa-github" style="color: #FFFFFF;"></i>
+            </a>
+
+            <a href="https://wallhaven.cc/user/huseynoffX" target="_blank" class="link-card icon-only">
+                <img src="https://pbs.twimg.com/profile_images/653341480640217088/t1c1aTc9_400x400.png" alt="Wallhaven" class="wallhaven-icon-img">
             </a>
 
             <a href="https://www.youtube.com/@heshzadgelmiraglima" target="_blank" class="link-card icon-only">
@@ -301,26 +328,23 @@
             </a>
 
             <div class="image-card-grid">
-                
+
                 <a class="grid-card large">
                     <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761507082/0182ce49934ba955f88d65125de91be1_hfleql.png"/>
-                    <!-- <span class="overlay-text">Böyük Şəkil Kartı</span> -->
-                </a>
+                    </a>
 
                 <a class="grid-card small">
                     <img src="https://media.tenor.com/FQDhE-MiEEYAAAAM/dyster-profile-picture.gif"/>
-                    <!-- <span class="overlay-text">Kiçik Kart 1</span> -->
-                </a>
+                    </a>
 
                 <a class="grid-card small">
                     <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/2febcd75685725.5c5339f507987.gif"/>
-                    <!-- <span class="overlay-text">Kiçik Kart 2</span> -->
-                </a>
+                    </a>
 
             </div>
-            
+
         </div>
-        
+
         <div class="footer-section">
             <p class="custom-bio-text">
                 Are you using linktree? Hahaha this is custom 
