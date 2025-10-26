@@ -252,13 +252,17 @@
         .grid-card.large {
             grid-row: span 2; 
         }
+        .grid-card.medium {
+            grid-column: span 2;
+  height: 135px; /* manual ölçü */
+        }
 
         /* FOOTER HİSSƏSİ (Səhifənin ən sonunda, sürüşdürülə bilən) */
         .footer-section {
             width: 100%;
             max-width: var(--max-width);
             text-align: center;
-            margin-top: auto; 
+            margin-top: -14px; 
             padding: 10px var(--header-padding) 20px;
             z-index: 50;
         }
@@ -266,7 +270,7 @@
         .custom-bio-text {
             font-size: 0.75em; 
             color: var(--dark-grey-text);
-            margin-bottom: -16px; 
+            /* margin-bottom: -16px;  */
         }
 
         /* İmza şəkli tam "bio" sözünün üzərinə düşür */
@@ -276,9 +280,9 @@
         }
 
         .bio-text-wrapper .signature-image {
-            position: absolute;
-            bottom: 445px; 
-            left: -454%;
+            position: relative;
+            top: -41px; 
+            left: 207px;
             transform: translateX(-50%);
             width: 70px; 
             opacity: 1;
@@ -301,6 +305,9 @@
 
             <div class="profile-info">
                 <h1 class="username">HIKMET HUSEYNOFF</h1>
+                 <span class="bio-text-wrapper">
+                    <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503923/Melonix_2_1_ecfmpp.png" alt="Signature" class="signature-image">
+                </span>
                 <p class="handle">・huseynoff.one</p>
             </div>
         </div>
@@ -341,18 +348,12 @@
                     <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/2febcd75685725.5c5339f507987.gif"/>
                     </a>
 
+                    <a class="grid-card medium">
+                    <img src="https://pa1.aminoapps.com/5766/00a8fc1a5ac55e2c119526fd9d9749bf2cea42b8_hq.gif"/>
+                    </a>
+
             </div>
 
-        </div>
-
-        <div class="footer-section">
-            <p class="custom-bio-text">
-                Are you using linktree? Hahaha this is custom 
-                <span class="bio-text-wrapper">
-                    bio
-                    <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503923/Melonix_2_1_ecfmpp.png" alt="Signature" class="signature-image">
-                </span>
-            </p>
         </div>
     </div>
 </body>
