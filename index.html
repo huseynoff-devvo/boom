@@ -122,16 +122,16 @@
 
         /* Ad və Handle */
         .profile-info {
-            position: absolute;
+            /* position: absolute; */
             top: calc(var(--pp-size) + var(--header-padding) - 10px); 
             left: var(--header-padding);
             z-index: 15;
             text-align: left;
-            margin-top: 10px; 
+            /* margin-top: 108px;  */
         }
 
         .username {
-            margin-top: 9px;
+            margin-top: 107px;
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2em;
             line-height: 0.9;
@@ -144,11 +144,12 @@
             font-family: 'Roboto', sans-serif;
             color: var(--dark-grey-text);
             font-size: 0.8em;
-            margin-top: -71px;
+            margin-top: 0px;
         }
 
         /* LİNKLƏR/KARTLAR KONTEYNERİ */
         .links-container {
+            margin-top: -18px;
             flex-grow: 1; 
             padding: 10px var(--header-padding); 
             display: flex;
@@ -275,13 +276,14 @@
 
         /* İmza şəkli tam "bio" sözünün üzərinə düşür */
         .bio-text-wrapper {
+            margin-top: -5px;
             position: relative;
             display: inline-block;
         }
 
         .bio-text-wrapper .signature-image {
             position: relative;
-            top: -41px; 
+            top: -36px; 
             left: 207px;
             transform: translateX(-50%);
             width: 70px; 
@@ -305,9 +307,6 @@
 
             <div class="profile-info">
                 <h1 class="username">HIKMET HUSEYNOFF</h1>
-                 <span class="bio-text-wrapper">
-                    <img src="https://res.cloudinary.com/dp8udd8ol/image/upload/v1761503923/Melonix_2_1_ecfmpp.png" alt="Signature" class="signature-image">
-                </span>
                 <p class="handle">・huseynoff.one</p>
             </div>
         </div>
